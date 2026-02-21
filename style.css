@@ -1,0 +1,41 @@
+/* 
+.tinos-regular {
+  font-family: "Tinos", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.tinos-bold {
+  font-family: "Tinos", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+*/
+
+:root {
+	--white: #fff;
+	--black: #222;
+	--gray: #eaeaea;
+	--lt-gray: #f8f8f8;
+	--salmon: #f29377; /* AA a11y normal text w/#222 */
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: "Tinos", serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 100%;
+	background-color: var(--white);
+}
