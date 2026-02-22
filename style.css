@@ -17,6 +17,7 @@
 	--gray: #eaeaea;
 	--lt-gray: #f8f8f8;
 	--salmon: #f29377; /* AA a11y normal text w/#222 */
+	--accent: var(--salmon);
 }
 
 html {
@@ -26,7 +27,7 @@ html {
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+	box-sizing: inherit;
 }
 
 body {
@@ -37,5 +38,229 @@ body {
 	font-weight: 400;
 	font-style: normal;
 	font-size: 100%;
+	line-height: 1.65;
 	background-color: var(--white);
+}
+
+figure {
+	margin: 0;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+svg {
+	display: block;
+	width: 3rem;
+	height: 3rem;
+	fill: blue;
+	stroke: red;
+}
+
+button {
+	display: block;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+	font-weight: 700;
+	line-height: 1.25;
+	margin: 0 0 1rem;
+}
+
+a {
+	text-decoration-color: transparent;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 3px;
+	color: var(--accent);
+	transition: text-decoration-color 300ms ease-in-out;
+}
+
+a:focus,
+a:hover,
+a:active {
+	text-decoration-color: var(--accent);
+}
+
+.sr-only {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.wrap {
+	max-width: 75rem;
+	margin: 0 auto;
+}
+
+.section {
+	padding: 3rem 1rem;
+}
+
+/* Header */
+/* .header {
+} */
+
+.header .wrap {
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+	align-items: center;
+	padding: 3rem 1rem;
+}
+
+.logo_container {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-align: center;
+	grid-column: 2;
+}
+
+.social_search_container {
+	grid-column: 3;
+	justify-self: end;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 1.25rem;
+}
+
+/* Search Drawer */
+.search_button {
+	padding: 0.75rem;
+	border-radius: 5px;
+	background-color: transparent;
+	transition: background-color 300ms ease-in-out;
+}
+
+.search_button:focus,
+.search_button:hover,
+.search_button:active {
+	background-color: var(--accent);
+}
+
+.search_button svg {
+	width: 1.5rem;
+	height: 1.5rem;
+	stroke: var(--black);
+	transition: stroke 300ms ease-in-out;
+}
+
+.search_button:focus svg,
+.search_button:hover svg,
+.search_button:active svg {
+	stroke: var(--white);
+}
+
+.search_drawer {
+	display: none;
+}
+
+/* Social Navigtion */
+.social_nav {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+.social_nav a {
+	display: block;
+	padding: 0.75rem;
+	border-radius: 5px;
+	background-color: transparent;
+	transition: background-color 300ms ease-in-out;
+}
+
+.social_nav a:focus,
+.social_nav a:hover,
+.social_nav a:active {
+	background-color: var(--accent);
+}
+
+.social_nav svg {
+	width: 1.5rem;
+	height: 1.5rem;
+	fill: var(--black);
+	transition: fill 300ms ease-in-out;
+}
+
+.social_nav a:focus svg,
+.social_nav a:hover svg,
+.social_nav a:active svg {
+	fill: var(--white);
+}
+
+/* Navigation */
+.menu_button {
+	display: none;
+}
+
+.main_nav {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	max-width: 75rem;
+	margin: 0 auto;
+	border: 1px solid var(--gray);
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+
+.main_nav li {
+	flex: auto;
+	text-align: center;
+	border-right: 1px solid var(--gray);
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.main_nav li:last-of-type {
+	border-right: none;
+}
+
+.main_nav a {
+	display: block;
+	line-height: 1;
+	width: 100%;
+	padding: 1rem 0;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 1rem;
+}
+
+.main_nav a:has(+ button) {
+	width: calc(100% - 48px);
+}
+
+.main_nav button {
+	padding: 1rem;
+}
+
+.main_nav svg {
+	width: 1rem;
+	height: 1rem;
+	stroke: var(--black);
+}
+
+.sub_menu {
+	display: none;
 }
