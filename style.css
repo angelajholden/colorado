@@ -42,6 +42,10 @@ body {
 	background-color: var(--white);
 }
 
+.search_active {
+	overflow: hidden;
+}
+
 figure {
 	margin: 0;
 }
@@ -164,7 +168,37 @@ a:active {
 }
 
 .search_drawer {
-	display: none;
+	visibility: hidden;
+	opacity: 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 1;
+	background-color: var(--white);
+	transition:
+		visibility 300ms ease-in-out,
+		opacity 300ms ease-in-out;
+}
+
+.search_active .search_drawer {
+	visibility: visible;
+	opacity: 100%;
+}
+
+.search_close {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.search_form {
+	width: 768px;
+	max-width: 100%;
+	margin: 0 auto;
 }
 
 /* Social Navigtion */
@@ -224,6 +258,7 @@ a:active {
 }
 
 .main_nav li {
+	position: relative;
 	flex: auto;
 	text-align: center;
 	border-right: 1px solid var(--gray);
@@ -261,6 +296,36 @@ a:active {
 	stroke: var(--black);
 }
 
+/* Sub Menu */
 .sub_menu {
 	display: none;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	width: 100%;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: var(--white);
+	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 10%);
+}
+
+.sub_menu li {
+	border: none;
+	border-top: 1px solid var(--gray);
+}
+
+.main_nav li svg {
+	transform: rotate(0deg);
+	transition: transform 200ms ease-in-out;
+}
+
+.main_nav li:hover svg,
+.main_nav li button:has(+ .sub_menu.active) svg {
+	transform: rotate(180deg);
+}
+
+.main_nav li:hover .sub_menu,
+.sub_menu.active {
+	display: block;
 }
