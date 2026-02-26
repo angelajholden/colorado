@@ -16,8 +16,10 @@
 	--black: #222;
 	--gray: #eaeaea;
 	--lt-gray: #f8f8f8;
+	--blue: #0061b6;
+	--green: #597b7a;
 	--salmon: #f29377; /* AA a11y normal text w/#222 */
-	--accent: var(--salmon);
+	--accent: var(--green);
 }
 
 html {
@@ -80,17 +82,17 @@ h3 {
 }
 
 a {
-	text-decoration-color: transparent;
+	text-decoration-color: var(--blue);
 	text-decoration-thickness: 2px;
 	text-underline-offset: 3px;
-	color: var(--accent);
+	color: var(--blue);
 	transition: text-decoration-color 300ms ease-in-out;
 }
 
 a:focus,
 a:hover,
 a:active {
-	text-decoration-color: var(--accent);
+	text-decoration-color: transparent;
 }
 
 .sr-only {
@@ -104,7 +106,7 @@ a:active {
 }
 
 .wrap {
-	max-width: 75rem;
+	max-width: 79.375rem; /* 1270px */
 	margin: 0 auto;
 }
 
@@ -113,8 +115,10 @@ a:active {
 }
 
 /* Header */
-/* .header {
-} */
+.header {
+	background-color: var(--white);
+	box-shadow: none;
+}
 
 .header .wrap {
 	display: grid;
@@ -130,6 +134,30 @@ a:active {
 	grid-column: 2;
 }
 
+.primary_logo {
+	margin: 0 0 clamp(0.1rem, 1vw, 1rem);
+	line-height: 1;
+}
+
+.primary_logo a {
+	text-decoration: none;
+	color: var(--black);
+	font-size: clamp(1.25rem, 3.5vw, 2.5rem);
+	transition: color 300ms ease-in-out;
+}
+
+.primary_logo a:focus,
+.primary_logo a:hover,
+.primary_logo a:active {
+	color: var(--accent);
+}
+
+.description {
+	margin: clamp(0.25rem, 1vw, 1rem) 0;
+	line-height: 1;
+	font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
 .social_search_container {
 	grid-column: 3;
 	justify-self: end;
@@ -138,6 +166,30 @@ a:active {
 	justify-content: flex-end;
 	align-items: center;
 	gap: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+	.header {
+		position: sticky;
+		top: 0;
+		left: 0;
+		width: 100%;
+		box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 10%);
+	}
+
+	.header .wrap {
+		padding: 0.5rem;
+	}
+
+	.header .social_navigation {
+		display: none;
+	}
+}
+
+@media (max-width: 600px) {
+	.description {
+		display: none;
+	}
 }
 
 /* Search Drawer */
@@ -178,7 +230,8 @@ a:active {
 	width: 100%;
 	height: 100vh;
 	z-index: 1;
-	background-color: var(--white);
+	background-color: var(--accent);
+	color: var(--white);
 	transition:
 		visibility 300ms ease-in-out,
 		opacity 300ms ease-in-out;
@@ -191,14 +244,57 @@ a:active {
 
 .search_close {
 	position: absolute;
-	top: 0;
-	right: 0;
+	top: 0.5rem;
+	right: 0.5rem;
+	padding: 0.25rem;
+}
+
+.search_close:focus,
+.search_close:hover,
+.search_close:active {
+	background-color: var(--white);
+}
+
+.search_close svg {
+	width: 2.5rem;
+	height: 2.5rem;
+	stroke: var(--white);
+}
+
+.search_close:focus svg,
+.search_close:hover svg,
+.search_close:active svg {
+	stroke: var(--accent);
 }
 
 .search_form {
+	position: relative;
 	width: 768px;
 	max-width: 100%;
 	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+.search_label {
+	display: inline-block;
+	font-size: clamp(1.25rem, 3vw, 2rem);
+	line-height: 1;
+	margin: 0 0 0.5rem;
+}
+
+.search_form input[type="search"] {
+	width: 100%;
+	padding: 1rem 4rem 1rem 1rem;
+}
+
+.submit_button {
+	position: absolute;
+	bottom: 2px;
+	right: 1rem;
+}
+
+.submit_button svg {
+	stroke: var(--accent);
 }
 
 /* Social Navigtion */
@@ -245,11 +341,15 @@ a:active {
 	display: none;
 }
 
+.navigation {
+	padding-inline: 1rem;
+}
+
 .main_nav {
 	padding: 0;
 	margin: 0;
 	list-style-type: none;
-	max-width: 75rem;
+	max-width: 79.375rem; /* 1270px */
 	margin: 0 auto;
 	border: 1px solid var(--gray);
 	display: flex;
@@ -278,8 +378,22 @@ a:active {
 	width: 100%;
 	padding: 1rem 0;
 	text-transform: uppercase;
+	text-decoration: none;
+	color: var(--accent);
 	letter-spacing: 1px;
 	font-size: 1rem;
+	background-color: transparent;
+	transition:
+		background-color 300ms ease-in-out,
+		color 300ms ease-in-out;
+}
+
+.main_nav a.active,
+.main_nav a:focus,
+.main_nav a:hover,
+.main_nav a:active {
+	color: var(--white);
+	background-color: var(--accent);
 }
 
 .main_nav a:has(+ button) {
@@ -293,7 +407,7 @@ a:active {
 .main_nav svg {
 	width: 1rem;
 	height: 1rem;
-	stroke: var(--black);
+	stroke: var(--accent);
 }
 
 /* Sub Menu */
@@ -328,4 +442,39 @@ a:active {
 .main_nav li:hover .sub_menu,
 .sub_menu.active {
 	display: block;
+}
+
+@media (max-width: 1024px) {
+	.menu_button {
+		display: block;
+	}
+
+	.navigation {
+		visibility: hidden;
+		position: fixed;
+		top: 0;
+		left: -300px;
+		transform: translateX(0);
+		width: 300px;
+		height: 100vh;
+		z-index: 1;
+		background-color: var(--white);
+		transition:
+			visibility 300ms linear,
+			transform 300ms linear;
+	}
+
+	.main_nav {
+		flex-direction: column;
+	}
+
+	.menu_active .navigation {
+		visibility: visible;
+		transform: translateX(300px);
+	}
+}
+
+/* Hero */
+.hero {
+	margin-inline: 1rem;
 }
