@@ -148,19 +148,23 @@
 			</div>
 		</section>
 		<section class="section newsletter">
-			<h2 class="secondary_heading">Be notified of new issues:</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nisi magni hic doloribus quaerat, blanditiis alias mollitia, ex iure molestiae eos quas optio voluptate atque!</p>
-			<form action="#" class="form wrap newletter_form">
-				<label for="name" class="sr-only">Name</label>
-				<input id="name" name="name" type="text" placeholder="Name" autocomplete="given-name" required>
-				<label for="email" class="sr-only">Email</label>
-				<input id="email" name="email" type="text" placeholder="Email" autocomplete="email" required>
-				<button type="submit" class="newsletter_button" aria-label="Submit Newsletter Sign Up">
-					<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><rect x="48" y="96" width="416" height="320" rx="40" ry="40" fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M112 160l144 112 144-112"/></svg>
-				</button>
-			</form>
+			<div class="wrap">
+				<div class="center">
+					<h2 class="secondary_heading">Be notified of new issues:</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nisi magni hic doloribus quaerat, blanditiis alias mollitia, ex iure molestiae eos quas optio voluptate atque!</p>
+				</div>
+				<form action="#" class="form newsletter_form">
+					<label for="name" class="sr-only">Name</label>
+					<input id="name" name="name" type="text" placeholder="Name" autocomplete="given-name" required>
+					<label for="email" class="sr-only">Email</label>
+					<input id="email" name="email" type="email" placeholder="Email" autocomplete="email" required>
+					<button type="submit" class="newsletter_button" aria-label="Submit Newsletter Sign Up">
+						<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><rect x="48" y="96" width="416" height="320" rx="40" ry="40" fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M112 160l144 112 144-112"/></svg>
+					</button>
+				</form>
+			</div>
 		</section>
-		<section class="section blog">
+		<section class="section blog center">
 			<h2 class="secondary_heading">Recent Blog</h2>
 			<div class="wrap">
 				<article class="article">
@@ -194,8 +198,16 @@
 			</div>
 		</section>
 		<div class="testimonials section">
-			<ul class="slider wrap">
-				<li class="slide">
+			<div class="slider_nav">
+				<button type="button" aria-label="Previous Testimonial" class="slider_button prev_button">
+					<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144"/></svg>
+				</button>
+				<button type="button" aria-label="Next Testimonial" class="slider_button next_button">
+					<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144"/></svg>
+				</button>
+			</div>
+			<ul class="slider wrap center">
+				<li class="slide active">
 					<figure class="figure">
 						<img src="images/optimized/peter-pryharski-BZ_pzyTd-hE-unsplash.jpg" alt="A forest of trees next to a mountain with snow.">
 					</figure>
