@@ -50,7 +50,11 @@ body {
 	overflow: hidden;
 }
 
-/* hides the menu open and search open buttons from keyboard navigation and screen readers */
+/*
+* hides 'menu_open' and 'search_open' buttons
+* from keyboard navigation and screen readers
+* when those drawers are open
+*/
 .search_active .search_open,
 .menu_active .search_open,
 .search_active .menu_open,

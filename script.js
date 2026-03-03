@@ -2,8 +2,8 @@ const body = document.body;
 
 // stateBtn = the button with 'aria-expanded'
 // triggerBtns = the buttons that get the click listeners
-//  controlElement = the element that gets the class
-//  stateClass = the class that represents 'active'
+// controlElement = the element that gets the class
+// stateClass = the class that represents 'active'
 
 // navigation
 const menuOpen = document.querySelector(".menu_open");
@@ -15,9 +15,9 @@ const searchBtns = document.querySelectorAll(".search_button");
 const subMenuBtns = document.querySelectorAll(".main_nav button[aria-controls]");
 
 // only one submenu open at a time
-function closeAllSubMenus(expectBtn) {
+function closeAllSubMenus(exceptBtn) {
 	subMenuBtns.forEach((btn) => {
-		if (btn === expectBtn) return;
+		if (btn === exceptBtn) return;
 		const id = btn.getAttribute("aria-controls");
 		const subMenu = document.getElementById(id);
 		if (!subMenu) return;
@@ -26,7 +26,7 @@ function closeAllSubMenus(expectBtn) {
 	});
 }
 
-// helper function
+// helper function toggle
 function toggleControlItem(stateBtn, triggerButton, controlElement, stateClass) {
 	if (!triggerButton.length) return;
 	triggerButton.forEach((btn) => {
@@ -40,6 +40,7 @@ function toggleControlItem(stateBtn, triggerButton, controlElement, stateClass) 
 	});
 }
 
+// sub menu toggle
 function subMenuToggle() {
 	if (!subMenuBtns.length) return;
 	subMenuBtns.forEach((btn) => {
@@ -55,10 +56,12 @@ function menuToggle() {
 	toggleControlItem(menuOpen, menuBtns, body, "menu_active");
 }
 
+// search drawer toggle
 function searchToggle() {
 	toggleControlItem(searchOpen, searchBtns, body, "search_active");
 }
 
+// layered esc key to close everything
 function escapeToggle() {
 	document.addEventListener("keydown", (e) => {
 		if (e.key !== "Escape") return;
@@ -69,7 +72,6 @@ function escapeToggle() {
 			const id = subBtn.getAttribute("aria-controls");
 			const subMenu = document.getElementById(id);
 			if (!subMenu) continue;
-
 			if (subMenu.classList.contains("active")) {
 				subMenu.classList.remove("active");
 				subBtn.setAttribute("aria-expanded", "false");
@@ -77,16 +79,7 @@ function escapeToggle() {
 			}
 		}
 
-		// closes the submenu and the drawer at the same time
-		// subMenuBtns.forEach((button) => {
-		// 	const id = button.getAttribute("aria-controls");
-		// 	const subMenu = document.getElementById(id);
-		// 	if (subMenu) {
-		// 		subMenu.classList.remove("active");
-		// 		button.setAttribute("aria-expanded", "false");
-		// 	}
-		// });
-
+		// close the menu or search drawers last
 		if (body.classList.contains("menu_active")) {
 			body.classList.remove("menu_active");
 			menuOpen.setAttribute("aria-expanded", "false");
