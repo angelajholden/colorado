@@ -19,6 +19,7 @@
 	--lt-gray: #f8f8f8;
 	--blue: #0061b6;
 	--green: #597b7a;
+	--alt-green: #698d8c;
 	--salmon: #f29377; /* AA a11y normal text w/#222 */
 	--accent: var(--green);
 }
@@ -47,6 +48,14 @@ body {
 
 .search_active {
 	overflow: hidden;
+}
+
+/* hides the menu open and search open buttons from keyboard navigation and screen readers */
+.search_active .search_open,
+.menu_active .search_open,
+.search_active .menu_open,
+.menu_active .menu_open {
+	visibility: hidden;
 }
 
 figure {
@@ -459,10 +468,10 @@ a:active {
 	padding: 1rem 0;
 	text-transform: uppercase;
 	text-decoration: none;
-	color: var(--accent);
 	letter-spacing: 1px;
 	font-size: 1rem;
-	background-color: transparent;
+	color: var(--accent);
+	background-color: var(--white);
 	transition:
 		background-color 300ms ease-in-out,
 		color 300ms ease-in-out;
@@ -482,12 +491,39 @@ a:active {
 
 .main_nav button {
 	padding: 1rem;
+	background-color: transparent;
+	transition: background-color 300ms ease-in-out;
+}
+
+.main_nav button:focus,
+.main_nav button:hover,
+.main_nav button:active {
+	background-color: var(--accent);
 }
 
 .main_nav svg {
 	width: 1rem;
 	height: 1rem;
 	stroke: var(--accent);
+	transform: rotate(0deg);
+	transition:
+		stroke 300ms ease-in-out,
+		transform 200ms ease-in-out;
+}
+
+.main_nav button:focus svg,
+.main_nav button:hover svg,
+.main_nav button:active svg {
+	stroke: var(--white);
+}
+
+.main_nav button:has(+ .sub_menu.active) {
+	background-color: var(--accent);
+}
+
+.main_nav button:has(+ .sub_menu.active) svg {
+	stroke: var(--white);
+	transform: rotate(180deg);
 }
 
 /* Sub Menu */
@@ -498,7 +534,7 @@ a:active {
 	list-style-type: none;
 	width: 100%;
 	position: absolute;
-	top: 100%;
+	top: calc(100% + 1px);
 	left: 0;
 	background-color: var(--white);
 	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 10%);
@@ -507,20 +543,25 @@ a:active {
 
 .sub_menu li {
 	border: none;
-	border-top: 1px solid var(--gray);
+	border-bottom: 1px solid var(--alt-green);
 }
 
-.main_nav li svg {
-	transform: rotate(0deg);
-	transition: transform 200ms ease-in-out;
+.sub_menu a {
+	color: var(--white);
+	background-color: var(--accent);
+	transition:
+		background-color 300ms ease-in-out,
+		color 300ms ease-in-out;
 }
 
-.main_nav li:hover svg,
-.main_nav li button:has(+ .sub_menu.active) svg {
-	transform: rotate(180deg);
+.sub_menu a.active,
+.sub_menu a:focus,
+.sub_menu a:hover,
+.sub_menu a:active {
+	color: var(--accent);
+	background-color: var(--white);
 }
 
-.main_nav li:hover .sub_menu,
 .sub_menu.active {
 	display: block;
 }
@@ -554,6 +595,7 @@ a:active {
 	}
 
 	.main_nav li {
+		flex-wrap: wrap;
 		width: 100%;
 		border-right: none;
 		border-bottom: 1px solid var(--gray);
@@ -563,13 +605,25 @@ a:active {
 		transform: rotate(0);
 	}
 
-	.main_nav li:hover .sub_menu {
-		display: none;
+	.main_nav a {
+		padding: 1rem;
+		text-align: left;
 	}
 
 	.menu_active .navigation {
 		visibility: visible;
 		transform: translateX(300px);
+	}
+
+	.sub_menu {
+		position: static;
+		width: 100%;
+		box-shadow: none;
+	}
+
+	.sub_menu li {
+		border: none;
+		border-bottom: 1px solid var(--alt-green);
 	}
 }
 
