@@ -90,9 +90,17 @@ function escapeToggle() {
 	});
 }
 
+function copyright() {
+	const date = document.getElementById("date");
+	const year = new Date().getFullYear();
+	if (!date) return;
+	date.textContent = year;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 	menuToggle();
 	searchToggle();
 	subMenuToggle();
 	escapeToggle();
+	copyright();
 });
