@@ -864,7 +864,7 @@ a:active {
 
 blockquote p {
 	max-width: 80ch;
-	margin: 0 auto;
+	margin: 0 auto 1rem;
 	font-size: 1.25rem;
 	line-height: 1.25;
 }
@@ -896,7 +896,7 @@ blockquote + cite div {
 }
 
 /* Slider */
-.slider {
+.slider ul {
 	position: relative;
 	width: 100%;
 	height: auto;
