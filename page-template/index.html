@@ -8,7 +8,7 @@
 	<meta name="description" content="Colorado Lorem ipsum, dolor sit amet consectetur adipisicing elit.">
 	<meta property="og:title" content="Colorado | Home" />
 	<meta property="og:type" content="website" />
-	<meta property="og:image" content="https://angelajholden.github.io/Colorado/images/placeholder.png" />
+	<meta property="og:image" content="https://angelajholden.github.io/Colorado/../images/placeholder.png" />
 	<meta property="og:url" content="https://angelajholden.github.io/Colorado/" />
 	<meta property="og:description" content="Colorado is a blog that celebrates the Colorado views in nature." />
 	<meta property="og:site_name" content="Colorado" />
@@ -16,9 +16,9 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="normalize.css">
-	<link rel="stylesheet" href="style.css">
-	<script defer src="script.js"></script>
+	<link rel="stylesheet" href="../normalize.css">
+	<link rel="stylesheet" href="../style.css">
+	<script defer src="../script.js"></script>
 </head>
 
 <body class="">
@@ -26,7 +26,7 @@
 	<header class="header">
 		<div class="wrap">
 			<div class="logo_container">
-				<h1 class="primary_logo"><a href="./">Colorado</a></h1>
+				<div class="primary_logo"><a href="../">Colorado</a></div>
 				<p class="description">Lorem ipsum dolor sit amet consectetur.</p>
 			</div>
 			<div class="social_search_container">
@@ -75,172 +75,248 @@
 				<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
 			</button>
 			<ul class="main_nav">
-				<li><a class="active" href="./">Home</a></li>
-				<li><a href="portfolio/">Portfolio</a>
+				<li><a href="../">Home</a></li>
+				<li><a href="../portfolio/">Portfolio</a>
 					<button type="button" aria-label="Open Portfolio Sub Menu" aria-controls="portfolioSubMenu" aria-expanded="false">
 						<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 184l144 144 144-144"/></svg>
 					</button>
 					<ul id="portfolioSubMenu" class="sub_menu">
-						<li><a href="portfolio/portfolio-item/">Portfolio Item One</a></li>
-						<li><a href="portfolio/portfolio-item/">Portfolio Item Two</a></li>
-						<li><a href="portfolio/portfolio-item/">Portfolio Item Three</a></li>
-						<li><a href="portfolio/portfolio-item/">Portfolio Item Four</a></li>
+						<li><a href="../portfolio/portfolio-item/">Portfolio Item One</a></li>
+						<li><a href="../portfolio/portfolio-item/">Portfolio Item Two</a></li>
+						<li><a href="../portfolio/portfolio-item/">Portfolio Item Three</a></li>
+						<li><a href="../portfolio/portfolio-item/">Portfolio Item Four</a></li>
 					</ul>
 				</li>
-				<li><a href="blog/">Blog</a>
+				<li><a href="../blog/">Blog</a>
 					<button type="button" aria-label="Open Blog Sub Menu" aria-controls="blogSubMenu" aria-expanded="false">
 						<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 184l144 144 144-144"/></svg>
 					</button>
 					<ul id="blogSubMenu" class="sub_menu">
-						<li><a href="blog/blog-post/">Blog Item One</a></li>
-						<li><a href="blog/blog-post/">Blog Item Two</a></li>
-						<li><a href="blog/blog-post/">Blog Item Three</a></li>
-						<li><a href="blog/blog-post/">Blog Item Four</a></li>
+						<li><a href="../blog/blog-post/">Blog Item One</a></li>
+						<li><a href="../blog/blog-post/">Blog Item Two</a></li>
+						<li><a href="../blog/blog-post/">Blog Item Three</a></li>
+						<li><a href="../blog/blog-post/">Blog Item Four</a></li>
 					</ul>
 				</li>
-				<li><a href="about/">About</a></li>
-				<li><a href="page-template/">Page Template</a></li>
-				<li><a href="contact/">Contact</a></li>
+				<li><a href="../about/">About</a></li>
+				<li><a class="active" href="./">Page Template</a></li>
+				<li><a href="../contact/">Contact</a></li>
 			</ul>
 		</nav>
 	</header>
 	<main class="main">
-		<section class="hero">
-			<div class="wrap">
-				<figure class="figure">
-					<img src="images/optimized/holly-mandarich-4VgatlFyUpQ-unsplash.jpg" alt="A valley of wild flowers between the mountains.">
-				</figure>
-				<div class="hero_text">
-					<h2 class="hero_heading">Start Your Work with a Smile</h2>
-					<a class="button" href="#">View Details</a>
-				</div>
-			</div>
+		<section id="text">
+			<h2>Text Elements</h2>
+
+			<h1>Heading Level 1</h1>
+			<h2>Heading Level 2</h2>
+			<h3>Heading Level 3</h3>
+			<h4>Heading Level 4</h4>
+			<h5>Heading Level 5</h5>
+			<h6>Heading Level 6</h6>
+
+			<p>
+				This is a paragraph with <strong>strong text</strong>, <em>emphasized text</em>,
+				<a href="#">a link</a>, <mark>highlighted text</mark>, <small>small text</small>,
+				and <abbr title="HyperText Markup Language">HTML</abbr>.
+			</p>
+
+			<p>
+				Here is some inline code: <code>const message = "Hello";</code>
+			</p>
+
+			<blockquote>
+				<p>This is a blockquote. Great for testing quote styles.</p>
+				<cite>Someone Famous</cite>
+			</blockquote>
+
+			<pre><code>function helloWorld() {
+					console.log("Hello, world!");
+					}</code></pre>
+
+			<hr>
+
+			<p>Here is a line break example.<br>This text starts on a new line.</p>
 		</section>
-		<div class="headline section wrap">
-			<p>Hello Guys! We are Colorado, we create beautful and awesome static websites.</p>
-		</div>
-		<section class="section grid">
-			<h2 class="secondary_heading center">Latest Portfolio</h2>
-			<div class="wrap">
-				<article class="article center">
-					<figure class="figure">
-						<img src="images/optimized/adam-rinehart-F4PqvokPgy8-unsplash.jpg" alt="A river beside a mountain with talls trees.">
-					</figure>
-					<h3 class="tertiary_heading">Welcome to colorful Colorado</h3>
-					<time datetime="2026-03-19">March 19,2026</time>
-				</article>
-				<article class="article center">
-					<figure class="figure">
-						<img src="images/optimized/bailey-anselme-jGBZ_cz7t4Q-unsplash.jpg" alt="A higway in the desert next to the mountains.">
-					</figure>
-					<h3 class="tertiary_heading">Welcome to colorful Colorado</h3>
-					<time datetime="2026-03-19">March 19,2026</time>
-				</article>
-				<article class="article center">
-					<figure class="figure">
-						<img src="images/optimized/briana-tozour-mRFApSUyy8A-unsplash.jpg" alt="A long winding road in front of a mountain.">
-					</figure>
-					<h3 class="tertiary_heading">Welcome to colorful Colorado</h3>
-					<time datetime="2026-03-19">March 19,2026</time>
-				</article>
-			</div>
-		</section>
-		<section class="section newsletter">
-			<div class="wrap">
-				<div class="center">
-					<h2 class="secondary_heading">Be notified of new issues:</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nisi magni hic doloribus quaerat, blanditiis alias mollitia, ex iure molestiae eos quas optio voluptate atque!</p>
-				</div>
-				<form action="#" class="form newsletter_form">
-					<label for="name" class="sr-only">Name</label>
-					<input id="name" name="name" type="text" placeholder="Name" autocomplete="given-name" required>
-					<label for="email" class="sr-only">Email</label>
-					<input id="email" name="email" type="email" placeholder="Email" autocomplete="email" required>
-					<button type="submit" class="newsletter_button" aria-label="Submit Newsletter Sign Up">
-						<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><rect x="48" y="96" width="416" height="320" rx="40" ry="40" fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M112 160l144 112 144-112"/></svg>
-					</button>
-				</form>
-			</div>
-		</section>
-		<section class="section blog center">
-			<h2 class="secondary_heading">Recent Blog</h2>
-			<div class="wrap">
-				<article class="article">
-					<figure class="figure">
-						<img src="images/optimized/colin-lloyd-V72xxgvew-A-unsplash.jpg" alt="A small red mountain in front of a bigger mountain.">
-					</figure>
-					<h3 class="tertiary_heading">An Inspirational Blog About Flowers</h3>
-					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit...</p>
-					<footer class="meta">
-						<span class="author">Admin</span> /
-						<time datetime="2026-02-21">February 21, 2026</time> /
-						<span class="category">Flower</span> /
-						<span class="comments">10 Comments</span>
-						<p><a class="read_more" href="#">Read More...</a></p>
-					</footer>
-				</article>
-				<article class="article">
-					<figure class="figure">
-						<img src="images/optimized/melanie-magdalena-dDWLTcR9Gpc-unsplash.jpg" alt="Tall sharpe rocks with bright green trees.">
-					</figure>
-					<h3 class="tertiary_heading">An Inspirational Blog About Flowers</h3>
-					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit...</p>
-					<footer class="meta">
-						<span class="author">Admin</span> /
-						<time datetime="2026-02-21">February 21, 2026</time> /
-						<span class="category">Flower</span> /
-						<span class="comments">10 Comments</span>
-						<p><a class="read_more" href="#">Read More...</a></p>
-					</footer>
-				</article>
-			</div>
-		</section>
-		<div class="testimonials section slider">
-			<div class="slider_nav">
-				<button type="button" aria-label="Previous Testimonial" class="slider_button prev_button">
-					<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144"/></svg>
-				</button>
-				<button type="button" aria-label="Next Testimonial" class="slider_button next_button">
-					<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144"/></svg>
-				</button>
-			</div>
-			<ul class="wrap center">
-				<li class="slide">
-					<figure class="figure">
-						<img src="images/optimized/peter-pryharski-BZ_pzyTd-hE-unsplash.jpg" alt="A forest of trees next to a mountain with snow.">
-					</figure>
-					<blockquote>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus amet necessitatibus animi explicabo non blanditiis nobis pariatur veritatis tenetur quaerat.</p>
-					</blockquote>
-					<cite>Heidi Holden
-						<div>Buyer / Author</div>
-					</cite>
-				</li>
-				<li class="slide">
-					<figure class="figure">
-						<img src="images/optimized/thomas-morse-cuKKa0vWZSY-unsplash.jpg" alt="A forest in the fall when the leaves are yellow.">
-					</figure>
-					<blockquote>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus amet necessitatibus animi explicabo non blanditiis nobis pariatur veritatis tenetur quaerat.</p>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, recusandae itaque ea culpa nihil vero earum voluptatem, minus suscipit amet dolor esse cupiditate inventore placeat! Aperiam placeat incidunt quasi consequatur?</p>
-					</blockquote>
-					<cite>Heidi Holden
-						<div>Buyer / Author</div>
-					</cite>
-				</li>
-				<li class="slide">
-					<figure class="figure">
-						<img src="images/optimized/holly-mandarich-4VgatlFyUpQ-unsplash.jpg" alt="A valley of wild flowers between the mountains.">
-					</figure>
-					<blockquote>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-					</blockquote>
-					<cite>Heidi Holden
-						<div>Buyer / Author</div>
-					</cite>
-				</li>
+
+		<section id="lists">
+			<h2>Lists</h2>
+
+			<h3>Unordered List</h3>
+			<ul>
+				<li>First item</li>
+				<li>Second item</li>
+				<li>Third item</li>
 			</ul>
-		</div>
+
+			<h3>Ordered List</h3>
+			<ol>
+				<li>Step one</li>
+				<li>Step two</li>
+				<li>Step three</li>
+			</ol>
+
+			<h3>Description List</h3>
+			<dl>
+				<dt>HTML</dt>
+				<dd>The structure of a web page.</dd>
+
+				<dt>CSS</dt>
+				<dd>The styles of a web page.</dd>
+
+				<dt>JavaScript</dt>
+				<dd>The behavior of a web page.</dd>
+			</dl>
+		</section>
+
+		<section id="table">
+			<h2>Table</h2>
+
+			<table>
+				<caption>Sample Data Table</caption>
+				<thead>
+					<tr>
+						<th scope="col">Name</th>
+						<th scope="col">Role</th>
+						<th scope="col">Location</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Angela</td>
+						<td>Frontend Developer</td>
+						<td>Remote</td>
+					</tr>
+					<tr>
+						<td>Jamie</td>
+						<td>Designer</td>
+						<td>Chicago</td>
+					</tr>
+					<tr>
+						<td>Morgan</td>
+						<td>Project Manager</td>
+						<td>New York</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<section id="media">
+			<h2>Media</h2>
+
+			<figure>
+				<img src="https://via.placeholder.com/600x300" alt="Placeholder example image">
+				<figcaption>Example image with caption.</figcaption>
+			</figure>
+
+			<p>
+				<audio controls>
+					<source src="#" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>
+			</p>
+
+			<p>
+				<video controls width="400">
+					<source src="#" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+			</p>
+		</section>
+
+		<section id="form">
+			<h2>Form Elements</h2>
+
+			<form action="#" method="post">
+				<p>
+					<label for="name">Name</label><br>
+					<input type="text" id="name" name="name" placeholder="Enter your name">
+				</p>
+
+				<p>
+					<label for="email">Email</label><br>
+					<input type="email" id="email" name="email" placeholder="Enter your email">
+				</p>
+
+				<p>
+					<label for="password">Password</label><br>
+					<input type="password" id="password" name="password">
+				</p>
+
+				<p>
+					<label for="topic">Topic</label><br>
+					<select id="topic" name="topic">
+						<option value="">Please choose</option>
+						<option value="html">HTML</option>
+						<option value="css">CSS</option>
+						<option value="javascript">JavaScript</option>
+					</select>
+				</p>
+
+				<fieldset>
+					<legend>Preferred Contact Method</legend>
+
+					<label>
+						<input type="radio" name="contact" value="email">
+						Email
+					</label>
+
+					<label>
+						<input type="radio" name="contact" value="phone">
+						Phone
+					</label>
+				</fieldset>
+
+				<fieldset>
+					<legend>Interests</legend>
+
+					<label>
+						<input type="checkbox" name="interests" value="html">
+						HTML
+					</label>
+
+					<label>
+						<input type="checkbox" name="interests" value="css">
+						CSS
+					</label>
+
+					<label>
+						<input type="checkbox" name="interests" value="javascript">
+						JavaScript
+					</label>
+				</fieldset>
+
+				<p>
+					<label for="message">Message</label><br>
+					<textarea id="message" name="message" rows="5" cols="40" placeholder="Write your message"></textarea>
+				</p>
+
+				<p>
+					<label for="file">Upload a file</label><br>
+					<input type="file" id="file" name="file">
+				</p>
+
+				<p>
+					<label for="range">Range</label><br>
+					<input type="range" id="range" name="range" min="0" max="100">
+				</p>
+
+				<p>
+					<label for="date">Date</label><br>
+					<input type="date" id="date" name="date">
+				</p>
+
+				<p>
+					<button type="submit">Submit</button>
+					<button type="reset">Reset</button>
+					<button type="button">Button</button>
+				</p>
+			</form>
+		</section>
+		<aside>
+			<h2>Aside</h2>
+			<p>This is an aside for secondary content.</p>
+		</aside>
 	</main>
 	<footer class="footer">
 		<div class="section">
@@ -278,12 +354,12 @@
 					<h3 class="tertiary_heading">Page Links</h3>
 					<nav class="list_nav">
 						<ul>
-							<li><a href="./">Home</a></li>
-							<li><a href="portfolio/">Portfolio</a></li>
-							<li><a href="blog/">Blog</a></li>
-							<li><a href="about/">About</a></li>
-							<li><a href="page-template/">Page Template</a></li>
-							<li><a href="contact/">Contact</a></li>
+							<li><a href="../">Home</a></li>
+							<li><a href="../portfolio/">Portfolio</a></li>
+							<li><a href="../blog/">Blog</a></li>
+							<li><a href="../about/">About</a></li>
+							<li><a href="./">Page Template</a></li>
+							<li><a href="../contact/">Contact</a></li>
 						</ul>
 					</nav>
 				</aside>
@@ -304,22 +380,22 @@
 					<h3 class="tertiary_heading">Instagram Feed</h3>
 					<div class="ig_grid">
 						<figure class="figure">
-							<img src="images/placeholder.png" alt="placeholder text">
+							<img src="../images/placeholder.png" alt="placeholder text">
 						</figure>
 						<figure class="figure">
-							<img src="images/placeholder.png" alt="placeholder text">
+							<img src="../images/placeholder.png" alt="placeholder text">
 						</figure>
 						<figure class="figure">
-							<img src="images/placeholder.png" alt="placeholder text">
+							<img src="../images/placeholder.png" alt="placeholder text">
 						</figure>
 						<figure class="figure">
-							<img src="images/placeholder.png" alt="placeholder text">
+							<img src="../images/placeholder.png" alt="placeholder text">
 						</figure>
 						<figure class="figure">
-							<img src="images/placeholder.png" alt="placeholder text">
+							<img src="../images/placeholder.png" alt="placeholder text">
 						</figure>
 						<figure class="figure">
-							<img src="images/placeholder.png" alt="placeholder text">
+							<img src="../images/placeholder.png" alt="placeholder text">
 						</figure>
 					</div>
 				</aside>
