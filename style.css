@@ -62,6 +62,33 @@ body {
 	visibility: hidden;
 }
 
+blockquote {
+	padding: 1rem;
+	margin: 0;
+	background-color: var(--lt-gray);
+	border-left: 5px solid var(--accent);
+}
+
+blockquote p {
+	font-size: 1.25rem;
+	line-height: 1.25;
+}
+
+blockquote p:first-of-type::before,
+blockquote p:last-of-type::after {
+	display: inline-block;
+	font-size: 1.65rem;
+	margin: 0 5px;
+}
+
+blockquote p:first-of-type::before {
+	content: "\201C";
+}
+
+blockquote p:last-of-type::after {
+	content: "\201D";
+}
+
 figure {
 	margin: 0;
 }
@@ -113,6 +140,30 @@ a:focus,
 a:hover,
 a:active {
 	text-decoration-color: var(--blue);
+}
+
+strong {
+	color: var(--accent);
+}
+
+pre,
+code {
+	background-color: var(--lt-gray);
+	border-radius: 5px;
+}
+
+code {
+	display: inline-block;
+	padding: 0.25rem 0.5rem;
+}
+
+pre {
+	display: block;
+	padding: 0.75rem 1rem;
+}
+
+pre code {
+	background-color: transparent;
 }
 
 .button {
@@ -233,6 +284,7 @@ a:active {
 	text-decoration: none;
 	color: var(--black);
 	font-size: clamp(1.25rem, 3.5vw, 2.5rem);
+	font-weight: 700;
 	transition: color 300ms ease-in-out;
 }
 
@@ -862,35 +914,24 @@ a:active {
 	z-index: 0;
 }
 
-blockquote p {
+.testimonials blockquote {
+	margin: 1rem 0;
+	background-color: transparent;
+	border: none;
+}
+
+.testimonials blockquote p {
 	max-width: 80ch;
 	margin: 0 auto 1rem;
-	font-size: 1.25rem;
-	line-height: 1.25;
 }
 
-blockquote p:first-of-type::before,
-blockquote p:last-of-type::after {
-	display: inline-block;
-	font-size: 1.65rem;
-	margin: 0 5px;
-}
-
-blockquote p:first-of-type::before {
-	content: "\201C";
-}
-
-blockquote p:last-of-type::after {
-	content: "\201D";
-}
-
-blockquote + cite {
+.testimonials blockquote + cite {
 	display: block;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }
 
-blockquote + cite div {
+.testimonials blockquote + cite div {
 	text-transform: none;
 	color: var(--med-gray);
 }
@@ -972,6 +1013,59 @@ blockquote + cite div {
 .slider_button:hover svg,
 .slider_button:active svg {
 	stroke: var(--white);
+}
+
+/* Page Template */
+.page_title {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: clamp(1.25rem, 3.5vw, 2.5rem);
+	font-weight: 400;
+}
+
+.breadcrumb_nav {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	line-height: 1;
+}
+
+.breadcrumb_nav li {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.breadcrumb_nav li::after {
+	content: "|";
+	display: inline-block;
+	vertical-align: text-top;
+	margin: 0 5px 0 8px;
+}
+
+.breadcrumb_nav li:last-of-type::after {
+	content: "";
+}
+
+.breadcrumb_nav a {
+	color: var(--med-gray);
+	text-decoration-color: transparent;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 3px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+/* Page Hero */
+.page_hero .figure {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 2.7 / 1;
+}
+
+.page_hero img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 /* Footer */
