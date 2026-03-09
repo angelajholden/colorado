@@ -103,40 +103,37 @@ function theSlider() {
 		const next = slider.querySelector(".next_button");
 		const prev = slider.querySelector(".prev_button");
 
-		console.log(sliderItems, next, prev);
+		if (!sliderItems.length) return;
+		let currentIndex = 0;
+		const totalSlides = sliderItems.length;
 
-		if (sliderItems.length) {
-			let currentIndex = 0;
-			const totalSlides = sliderItems.length;
-
-			const updateSlider = (index) => {
-				sliderItems.forEach((slide, i) => {
-					slide.classList.toggle("active", i === index);
-					slide.setAttribute("aria-label", `Slide ${i + 1} of ${totalSlides}`);
-					slide.setAttribute("aria-hidden", i !== index);
-				});
-			};
-
-			const showNext = () => {
-				currentIndex = (currentIndex + 1) % totalSlides;
-				updateSlider(currentIndex);
-			};
-
-			const showPrev = () => {
-				currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-				updateSlider(currentIndex);
-			};
-
-			next?.addEventListener("click", showNext);
-			prev?.addEventListener("click", showPrev);
-
-			slider.addEventListener("keydown", (e) => {
-				if (e.key === "ArrowRight") showNext();
-				if (e.key === "ArrowLeft") showPrev();
+		const updateSlider = (index) => {
+			sliderItems.forEach((slide, i) => {
+				slide.classList.toggle("active", i === index);
+				slide.setAttribute("aria-label", `Slide ${i + 1} of ${totalSlides}`);
+				slide.setAttribute("aria-hidden", i !== index);
 			});
+		};
 
+		const showNext = () => {
+			currentIndex = (currentIndex + 1) % totalSlides;
 			updateSlider(currentIndex);
-		}
+		};
+
+		const showPrev = () => {
+			currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+			updateSlider(currentIndex);
+		};
+
+		next?.addEventListener("click", showNext);
+		prev?.addEventListener("click", showPrev);
+
+		slider.addEventListener("keydown", (e) => {
+			if (e.key === "ArrowRight") showNext();
+			if (e.key === "ArrowLeft") showPrev();
+		});
+
+		updateSlider(currentIndex);
 	});
 }
 

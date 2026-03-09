@@ -166,6 +166,135 @@ pre code {
 	background-color: transparent;
 }
 
+hr {
+	margin: 3rem 0;
+	width: 100%;
+	height: 0;
+	color: transparent;
+	border-style: none;
+	border-width: 0;
+	border-bottom: 1px solid var(--gray);
+}
+
+ul,
+ol {
+	padding-inline-start: 1.5rem;
+}
+
+ul li::marker,
+ol li::marker {
+	color: var(--accent);
+}
+
+dl dt {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: var(--accent);
+	text-indent: 1rem;
+	margin: 0.25rem 0;
+	font-weight: 700;
+	font-size: 0.9rem;
+}
+
+dl dd {
+	padding: 0.5rem 1rem;
+	margin-inline-start: 0;
+	background-color: var(--lt-gray);
+}
+
+table {
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+}
+
+thead {
+	background-color: var(--accent);
+	color: var(--white);
+}
+
+tr {
+	border: 1px solid var(--gray);
+}
+
+tr:nth-of-type(even) {
+	background-color: var(--lt-gray);
+}
+
+thead tr {
+	border-color: var(--accent);
+}
+
+th,
+td {
+	padding: 0.5rem;
+	border-left: 1px solid var(--gray);
+}
+
+@media (max-width: 600px) {
+	thead {
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+	}
+
+	th,
+	td {
+		display: block;
+		padding: 0;
+		border-left: none;
+		border-bottom: 1px solid var(--gray);
+	}
+
+	th::before,
+	td::before {
+		content: attr(data-attribute) ":";
+		display: block;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-size: 0.9rem;
+		font-weight: 700;
+	}
+
+	th::before {
+		padding: 0.5rem;
+		background-color: var(--accent);
+		color: var(--white);
+	}
+
+	td::before {
+		padding: 0.5rem 0.5rem 0;
+		color: var(--accent);
+	}
+
+	th:nth-of-type(even),
+	td:nth-of-type(even) {
+		background-color: var(--lt-gray);
+	}
+
+	th:first-of-type,
+	td:first-of-type {
+		border-left: none;
+	}
+
+	tr {
+		border-color: var(--accent);
+	}
+
+	tr:nth-of-type(even) {
+		background-color: transparent;
+	}
+
+	th div,
+	td div {
+		padding: 0.5rem;
+	}
+}
+
 .button {
 	display: inline-block;
 	padding: clamp(0.333rem, 1vw, 0.75rem) 1rem;
@@ -1059,7 +1188,7 @@ pre code {
 .page_hero .figure {
 	width: 100%;
 	height: auto;
-	aspect-ratio: 2.7 / 1;
+	aspect-ratio: 3 / 1;
 }
 
 .page_hero img {
