@@ -221,45 +221,78 @@
 		<section class="section">
 			<div class="wrap">
 				<h2>Media</h2>
-				<figure><img src="https://via.placeholder.com/600x300" alt="Placeholder example image">
+				<figure><img src="../images/optimized/holly-mandarich-4VgatlFyUpQ-unsplash.jpg" alt="Placeholder example image">
 					<figcaption>Example image with caption.</figcaption>
 				</figure>
-				<p>
-					<audio controls>
-						<source src="#" type="audio/mpeg">Your browser does not support the audio element.
-					</audio>
+				<h3 class="tertiary_heading">One Column</h3>
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta eveniet aliquam quasi eaque maiores dolores laboriosam, dolorem doloremque vitae ex ipsum eum autem unde aliquid sit alias? Quibusdam, ratione perferendis!</p>
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, fugit assumenda suscipit id laboriosam ipsum quam iure enim! Placeat ipsam ut incidunt doloribus veritatis dicta? Odio aliquid, qui nostrum laborum enim et voluptates vero cumque, blanditiis, voluptate iusto consectetur? Ut adipisci ea asperiores rem sequi at quae dignissimos sint a, quam necessitatibus deleniti. Debitis beatae quidem, dolores delectus modi recusandae ut, aut, corporis natus odio rem enim praesentium consectetur repudiandae dolore doloremque eaque mollitia ea?
 				</p>
-				<p>
-					<video controls width="400">
-						<source src="#" type="video/mp4">Your browser does not support the video tag.
-					</video>
-				</p>
+				<h3 class="tertiary_heading">Two Columns</h3>
+				<div class="two_col">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas deserunt quam doloribus atque repudiandae non, asperiores fuga ratione amet ipsum magni quasi molestiae saepe corrupti iure sed? In ullam a omnis odio cumque. Unde, accusamus aliquam hic, facere reprehenderit laudantium incidunt, debitis velit excepturi perspiciatis animi error repellat sed in. Illo tenetur molestiae esse accusantium voluptates atque nulla maiores dignissimos. Nobis voluptatem a quod, sint est quisquam, consequuntur enim autem quia recusandae libero iure aperiam suscipit quis expedita accusamus magni odit eveniet quo itaque rerum asperiores quas voluptatibus? Earum, sapiente! Nisi quos natus ipsum. At pariatur suscipit a autem.</p>
+				</div>
+				<h3 class="tertiary_heading">Three Columns</h3>
+				<div class="three_col">
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis laborum quas assumenda explicabo, accusamus ex, modi saepe dolores similique accusantium, fuga quos. Officiis ea suscipit quo nihil quia, voluptates optio.</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, iusto recusandae. Magnam ratione dolore similique doloremque voluptatem est temporibus labore repellat voluptatum. Est eius, molestias reiciendis quasi dolores mollitia iure error porro veritatis ut amet, sapiente repellendus nulla commodi maiores voluptate fuga culpa expedita iusto, et officiis quidem tempore earum.</p>
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa quam illo a animi fugiat ullam quod doloremque veritatis, culpa ratione eveniet eligendi nostrum maxime repellendus temporibus ut aut adipisci necessitatibus placeat officiis minus vitae? Accusamus?</p>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid quas deserunt molestias voluptatum animi, cupiditate rem reiciendis, veritatis tenetur vitae totam. Odio necessitatibus quisquam qui vel optio. Tempore illo eius possimus perferendis soluta nemo. A maiores accusamus vel ad earum fugiat illum ullam, alias fuga numquam, recusandae nihil vitae debitis modi repellendus minus consequuntur. Saepe commodi iusto distinctio illo quod voluptatibus sed aspernatur culpa soluta, unde provident blanditiis laboriosam labore exercitationem et. Rerum, placeat! Ipsam laborum exercitationem commodi. Numquam modi eveniet accusantium expedita in optio odio labore, porro dolore atque dolorem nostrum fuga, molestiae aspernatur odit dignissimos doloribus sapiente? Nam optio tempora cumque velit accusantium repellat at molestiae aperiam vero dicta officiis, molestias vitae. Id architecto atque modi. Odit quaerat, perspiciatis debitis laborum hic eligendi!</p>
+				</div>
 			</div>
 		</section>
 		<section class="section">
 			<div class="wrap">
-				<h2>Form Elements</h2>
-				<form action="#" method="post">
-					<p><label for="name">Name</label><br><input type="text" id="name" name="name" placeholder="Enter your name"></p>
-					<p><label for="email">Email</label><br><input type="email" id="email" name="email" placeholder="Enter your email"></p>
-					<p><label for="password">Password</label><br><input type="password" id="password" name="password"></p>
-					<p><label for="topic">Topic</label><br><select id="topic" name="topic">
+				<h2 class="center">Form Elements</h2>
+				<form class="form" action="#" method="post">
+					<label class="sr-only" for="name">Name</label>
+					<input type="text" id="name" name="name" placeholder="Enter your name">
+
+					<label class="sr-only" for="email">Email</label>
+					<input type="email" id="email" name="email" placeholder="Enter your email">
+
+					<label class="sr-only" for="password">Password</label>
+					<input type="password" id="password" name="password" placeholder="Password">
+
+					<label for="topic">
+						<div>Topic</div>
+						<select id="topic" name="topic">
 							<option value="">Please choose</option>
 							<option value="html">HTML</option>
 							<option value="css">CSS</option>
 							<option value="javascript">JavaScript</option>
-						</select></p>
+						</select>
+						<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 184l144 144 144-144"/></svg>
+					</label>
+
 					<fieldset>
-						<legend>Preferred Contact Method</legend><label><input type="radio" name="contact" value="email">Email</label><label><input type="radio" name="contact" value="phone">Phone</label>
+						<legend>Preferred Contact Method</legend>
+						<label><input type="radio" name="contact" value="email">Email</label>
+						<label><input type="radio" name="contact" value="phone">Phone</label>
 					</fieldset>
+
 					<fieldset>
-						<legend>Interests</legend><label><input type="checkbox" name="interests" value="html">HTML</label><label><input type="checkbox" name="interests" value="css">CSS</label><label><input type="checkbox" name="interests" value="javascript">JavaScript</label>
+						<legend>Interests</legend>
+						<label><input type="checkbox" name="interests" value="html">HTML</label>
+						<label><input type="checkbox" name="interests" value="css">CSS</label>
+						<label><input type="checkbox" name="interests" value="javascript">JavaScript</label>
 					</fieldset>
-					<p><label for="message">Message</label><br><textarea id="message" name="message" rows="5" cols="40" placeholder="Write your message"></textarea></p>
-					<p><label for="file">Upload a file</label><br><input type="file" id="file" name="file"></p>
-					<p><label for="range">Range</label><br><input type="range" id="range" name="range" min="0" max="100"></p>
-					<p><label for="date">Date</label><br><input type="date" id="date" name="date"></p>
-					<p><button type="submit">Submit</button><button type="reset">Reset</button><button type="button">Button</button></p>
+
+					<label for="message">Message</label>
+					<textarea id="message" name="message" rows="5" cols="40" placeholder="Write your message"></textarea>
+
+					<label for="file">Upload a file</label>
+					<input type="file" id="file" name="file">
+
+					<label for="range">Range</label>
+					<input type="range" id="range" name="range" min="0" max="100">
+
+					<label for="date">Date</label>
+					<input type="date" id="date" name="date">
+
+					<button class="button solid" type="submit">Submit</button>
+					<button class="button solid" type="reset">Reset</button>
+					<button class="button solid" type="button">Button</button>
 				</form>
 			</div>
 		</section>

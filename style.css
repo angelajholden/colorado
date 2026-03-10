@@ -90,7 +90,24 @@ blockquote p:last-of-type::after {
 }
 
 figure {
+	width: 100%;
+	height: auto;
 	margin: 0;
+	aspect-ratio: 16 / 9;
+}
+
+figure img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+figcaption {
+	padding: 0.5rem 0;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-align: center;
+	color: var(--med-gray);
 }
 
 img {
@@ -152,18 +169,18 @@ code {
 	border-radius: 5px;
 }
 
+pre {
+	display: block;
+	padding: 1.25rem 1.5rem;
+}
+
 code {
 	display: inline-block;
 	padding: 0.25rem 0.5rem;
 }
 
-pre {
-	display: block;
-	padding: 0.75rem 1rem;
-}
-
-pre code {
-	background-color: transparent;
+pre:has(code) {
+	padding: 1rem;
 }
 
 hr {
@@ -176,6 +193,7 @@ hr {
 	border-bottom: 1px solid var(--gray);
 }
 
+/* Lists */
 ul,
 ol {
 	padding-inline-start: 1.5rem;
@@ -197,15 +215,23 @@ dl dt {
 }
 
 dl dd {
-	padding: 0.5rem 1rem;
+	padding: 0.75rem 1rem;
 	margin-inline-start: 0;
 	background-color: var(--lt-gray);
 }
 
+/* Table */
 table {
 	width: 100%;
 	text-align: left;
 	border-collapse: collapse;
+}
+
+table caption {
+	padding: 0 0 0.5rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: var(--med-gray);
 }
 
 thead {
@@ -295,6 +321,112 @@ td {
 	}
 }
 
+/* Forms */
+form {
+	width: 100%;
+}
+
+.form {
+	max-width: 48rem;
+	margin: 0 auto;
+}
+
+label,
+legend {
+	display: block;
+	margin: 0 0 0.5rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: var(--accent);
+	font-size: 0.9rem;
+	font-weight: 700;
+	line-height: 1;
+}
+
+input[type="file"],
+input[type="range"] {
+	display: block;
+	width: 100%;
+	margin: 0 0 1rem;
+	accent-color: var(--accent);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	vertical-align: middle;
+	margin-right: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+select,
+textarea {
+	display: block;
+	width: 100%;
+	padding: 1rem;
+	margin: 0 0 1rem;
+	border: 2px solid var(--accent);
+}
+
+input::file-selector-button {
+	display: inline-block;
+	padding: clamp(0.333rem, 1vw, 0.75rem) 1rem;
+	color: var(--white);
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: clamp(0.9rem, 2vw, 1rem);
+	border: 2px solid var(--accent);
+	background-color: var(--accent);
+	cursor: pointer;
+	transition:
+		background-color 300ms ease-in-out,
+		color 300ms ease-in-out;
+}
+
+input::file-selector-button:focus,
+input::file-selector-button:hover,
+input::file-selector-button:active {
+	color: var(--accent);
+	background-color: var(--white);
+}
+
+select {
+	/* this removes the default arrow */
+	appearance: none;
+}
+
+label:has(select) {
+	position: relative;
+	z-index: 0;
+}
+
+label div {
+	margin: 0 0 0.5rem;
+}
+
+label svg {
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
+	stroke: var(--accent);
+	width: 1.5rem;
+	height: 1.5rem;
+	z-index: 1;
+	pointer-events: none;
+}
+
+fieldset {
+	border-width: 2px;
+	border-style: solid;
+	border-color: var(--accent);
+	margin-bottom: 1rem;
+}
+
 .button {
 	display: inline-block;
 	padding: clamp(0.333rem, 1vw, 0.75rem) 1rem;
@@ -310,11 +442,22 @@ td {
 		color 300ms ease-in-out;
 }
 
+.button.solid {
+	background-color: var(--accent);
+	border-color: var(--accent);
+}
+
 .button:focus,
 .button:hover,
 .button:active {
 	color: var(--black);
 	background-color: var(--white);
+}
+
+.button.solid:focus,
+.button.solid:hover,
+.button.solid:active {
+	color: var(--accent);
 }
 
 .sr-only {
@@ -334,6 +477,25 @@ td {
 .wrap {
 	max-width: 79.375rem; /* 1270px */
 	margin: 0 auto;
+}
+
+.two_col {
+	columns: 2 auto;
+}
+
+.three_col {
+	columns: 3 auto;
+}
+
+.two_col,
+.three_col {
+	break-inside: avoid;
+	margin: 0 0 1rem;
+}
+
+.two_col p,
+.three_col p {
+	margin: 0 0 1rem;
 }
 
 .section {
@@ -368,6 +530,13 @@ td {
 @media (max-width: 1302px) {
 	.headline::after {
 		max-width: calc(100% - 2rem);
+	}
+}
+
+@media (max-width: 768px) {
+	.two_col,
+	.three_col {
+		columns: 1;
 	}
 }
 
