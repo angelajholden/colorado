@@ -2,6 +2,23 @@
 <html lang="en">
 
 <head>
+	<script>
+		const origin = window.location.origin;
+		console.log(window.location.origin);
+		// 404 error does not work locally
+		// test this on staging and production
+		const local = "http://127.0.0.1:5500";
+		const staging = "https://angelajholden.github.io";
+		const prod = "https://coloradowebproject.com";
+		let base = document.createElement("base");
+		const head = document.head;
+		if ((origin === local) || (origin === prod)) {
+			base.href = origin;
+		} else if (origin === staging) {
+			base.href = `${origin}/colorado`;
+		}
+		head.insertAdjacentElement('afterbegin', base);
+	</script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>404 Error | Colorado</title>
@@ -388,23 +405,6 @@
 		</div>
 		<p class="copyright center"><span id="date"></span> &copy; Colorado &ndash; <a href="https://angelajholden.com" target="_blank">Angela J. Holden</a></p>
 	</footer>
-	<script>
-		const origin = window.location.origin;
-		console.log(window.location.origin);
-		// 404 error does not work locally
-		// test this on staging and production
-		const local = "http://127.0.0.1:5500";
-		const staging = "https://angelajholden.github.io";
-		const prod = "https://coloradowebproject.com";
-		let base = document.createElement("base");
-		const head = document.head;
-		if (origin === (local || prod)) {
-			base.href = origin;
-		} else if (origin === staging) {
-			base.href = `${origin}/colorado`;
-		}
-		head.insertAdjacentElement("beforeend", base);
-	</script>
 </body>
 
 </html>
