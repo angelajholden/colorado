@@ -137,24 +137,6 @@ function theSlider() {
 	});
 }
 
-function baseUrl() {
-	const origin = window.location.origin;
-	console.log(window.location.origin);
-	// 404 error does not work locally
-	// test this on staging and production
-	const local = "http://127.0.0.1:5500";
-	const staging = "https://angelajholden.github.io";
-	const prod = "https://coloradowebproject.com";
-	let base = document.createElement("base");
-	const head = document.head;
-	if (origin === (local || prod)) {
-		base.href = origin;
-	} else if (origin === staging) {
-		base.href = `${origin}/colorado`;
-	}
-	head.insertAdjacentElement("beforeend", base);
-}
-
 document.addEventListener("DOMContentLoaded", () => {
 	menuToggle();
 	searchToggle();
@@ -162,5 +144,4 @@ document.addEventListener("DOMContentLoaded", () => {
 	escapeToggle();
 	copyright();
 	theSlider();
-	baseUrl();
 });
