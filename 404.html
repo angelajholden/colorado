@@ -13,9 +13,9 @@
 		let base = document.createElement("base");
 		const head = document.head;
 		if ((origin === local) || (origin === prod)) {
-			base.href = origin;
+			base.href = `${origin}/`;
 		} else if (origin === staging) {
-			base.href = `${origin}/colorado`;
+			base.href = `${origin}/colorado/`;
 		}
 		head.insertAdjacentElement('afterbegin', base);
 	</script>
