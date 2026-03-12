@@ -1344,6 +1344,7 @@ fieldset {
 	content: "";
 }
 
+.breadcrumb_nav,
 .breadcrumb_nav a {
 	color: var(--med-gray);
 	text-decoration-color: transparent;
@@ -1351,6 +1352,16 @@ fieldset {
 	text-underline-offset: 3px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+	transition:
+		color 300ms ease-in-out,
+		text-decoration-color 300ms ease-in-out;
+}
+
+.breadcrumb_nav a:focus,
+.breadcrumb_nav a:hover,
+.breadcrumb_nav a:active {
+	color: var(--blue);
+	text-decoration-color: var(--blue);
 }
 
 /* Page Hero */
