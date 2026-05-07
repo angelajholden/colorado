@@ -824,7 +824,8 @@ fieldset {
 	list-style-type: none;
 	max-width: 79.375rem; /* 1270px */
 	margin: 0 auto;
-	border: 1px solid var(--gray);
+	border-top: 1px solid var(--gray);
+	border-bottom: 1px solid var(--gray);
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
@@ -834,15 +835,10 @@ fieldset {
 	position: relative;
 	flex: auto;
 	text-align: center;
-	border-right: 1px solid var(--gray);
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
 	align-items: center;
-}
-
-.main_nav li:last-of-type {
-	border-right: none;
 }
 
 .main_nav a {
@@ -856,7 +852,17 @@ fieldset {
 	font-size: 1rem;
 	color: var(--accent);
 	background-color: var(--white);
+	border-right: 1px solid var(--gray);
 	transition:
+		border-right 300ms ease-in-out,
+		background-color 300ms ease-in-out,
+		color 300ms ease-in-out;
+}
+
+.main_nav li:first-of-type a {
+	border-left: 1px solid var(--gray);
+	transition:
+		border-left 300ms ease-in-out,
 		background-color 300ms ease-in-out,
 		color 300ms ease-in-out;
 }
@@ -869,6 +875,20 @@ fieldset {
 	background-color: var(--accent);
 }
 
+.main_nav li:first-of-type a.active,
+.main_nav li:first-of-type a:focus,
+.main_nav li:first-of-type a:hover,
+.main_nav li:first-of-type a:active {
+	border-left: 1px solid var(--accent);
+}
+
+.main_nav li:last-of-type a.active,
+.main_nav li:last-of-type a:focus,
+.main_nav li:last-of-type a:hover,
+.main_nav li:last-of-type a:active {
+	border-right: 1px solid var(--accent);
+}
+
 .main_nav a:has(+ button) {
 	width: calc(100% - 48px);
 }
@@ -876,6 +896,7 @@ fieldset {
 .main_nav button {
 	padding: 1rem;
 	background-color: transparent;
+	border-right: 1px solid var(--gray);
 	transition: background-color 300ms ease-in-out;
 }
 
@@ -933,9 +954,18 @@ fieldset {
 .sub_menu a {
 	color: var(--white);
 	background-color: var(--accent);
+	border: none;
 	transition:
 		background-color 300ms ease-in-out,
 		color 300ms ease-in-out;
+}
+
+.sub_menu li:first-of-type a {
+	border-left: none;
+}
+
+.sub_menu li:last-of-type a {
+	border-right: none;
 }
 
 .sub_menu a.active,
@@ -944,6 +974,20 @@ fieldset {
 .sub_menu a:active {
 	color: var(--accent);
 	background-color: var(--white);
+}
+
+.sub_menu li:first-of-type a.active,
+.sub_menu li:first-of-type a:focus,
+.sub_menu li:first-of-type a:hover,
+.sub_menu li:first-of-type a:active {
+	border-left: none;
+}
+
+.sub_menu li:last-of-type a.active,
+.sub_menu li:last-of-type a:focus,
+.sub_menu li:last-of-type a:hover,
+.sub_menu li:last-of-type a:active {
+	border-right: none;
 }
 
 .sub_menu.active {
@@ -1375,6 +1419,83 @@ fieldset {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+}
+
+/* Portfolio */
+.portfolio .portfolio_grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 2rem;
+}
+
+.portfolio .article {
+	text-align: center;
+}
+
+.portfolio .secondary_heading {
+	margin: 1rem 0;
+}
+
+.portfolio .figure {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1.3 / 1;
+}
+
+.portfolio img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+@media (max-width: 960px) {
+	.portfolio .portfolio_grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+	}
+}
+
+@media (max-width: 600px) {
+	.portfolio .portfolio_grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Pagination */
+.pagination .pagination_grid {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+.pagination_button {
+	padding: 1rem;
+	min-width: 3rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: var(--black);
+	transition: color 300ms ease-in-out;
+}
+
+.pagination_button.active,
+.pagination_button:focus,
+.pagination_button:hover,
+.pagination_button:active {
+	color: var(--green);
+}
+
+/* 
+* this is strictly UI styling
+* use JavaScript to adjust pagination
+* on mobile vs. desktop
+*/
+@media (max-width: 600px) {
+	.pagination_button:nth-of-type(4),
+	.pagination_button:nth-of-type(5) {
+		display: none;
+	}
 }
 
 /* Footer */
