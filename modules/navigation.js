@@ -56,11 +56,13 @@ export default function initNavSearchToggle() {
 	function menuToggle() {
 		toggleControlItem(menuOpen, menuBtns, body, "menu_active");
 	}
+	menuToggle();
 
 	// search drawer toggle
 	function searchToggle() {
 		toggleControlItem(searchOpen, searchBtns, body, "search_active");
 	}
+	searchToggle();
 
 	// layered esc key to close everything
 	function escapeToggle() {
@@ -90,4 +92,5 @@ export default function initNavSearchToggle() {
 			}
 		});
 	}
+	escapeToggle();
 }
