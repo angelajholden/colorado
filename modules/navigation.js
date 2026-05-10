@@ -42,55 +42,43 @@ export default function initNavSearchToggle() {
 	}
 
 	// sub menu toggle
-	function subMenuToggle() {
-		if (!subMenuBtns.length) return;
-		subMenuBtns.forEach((btn) => {
-			const id = btn.getAttribute("aria-controls");
-			const subMenu = document.getElementById(id);
-			if (!subMenu) return;
-			toggleControlItem(btn, [btn], subMenu, "active");
-		});
-	}
+	if (!subMenuBtns.length) return;
+	subMenuBtns.forEach((btn) => {
+		const id = btn.getAttribute("aria-controls");
+		const subMenu = document.getElementById(id);
+		if (!subMenu) return;
+		toggleControlItem(btn, [btn], subMenu, "active");
+	});
 
 	// main menu toggle
-	function menuToggle() {
-		toggleControlItem(menuOpen, menuBtns, body, "menu_active");
-	}
-	menuToggle();
-
+	toggleControlItem(menuOpen, menuBtns, body, "menu_active");
 	// search drawer toggle
-	function searchToggle() {
-		toggleControlItem(searchOpen, searchBtns, body, "search_active");
-	}
-	searchToggle();
+	toggleControlItem(searchOpen, searchBtns, body, "search_active");
 
 	// layered esc key to close everything
-	function escapeToggle() {
-		document.addEventListener("keydown", (e) => {
-			if (e.key !== "Escape") return;
+	document.addEventListener("keydown", (e) => {
+		if (e.key !== "Escape") return;
 
-			// Close all submenus = layered appraoch
-			// Use for...of so you can stop as soon as you find an active submenu
-			for (const subBtn of subMenuBtns) {
-				const id = subBtn.getAttribute("aria-controls");
-				const subMenu = document.getElementById(id);
-				if (!subMenu) continue;
-				if (subMenu.classList.contains("active")) {
-					subMenu.classList.remove("active");
-					subBtn.setAttribute("aria-expanded", "false");
-					return;
-				}
+		// Close all submenus = layered appraoch
+		// Use for...of so you can stop as soon as you find an active submenu
+		for (const subBtn of subMenuBtns) {
+			const id = subBtn.getAttribute("aria-controls");
+			const subMenu = document.getElementById(id);
+			if (!subMenu) continue;
+			if (subMenu.classList.contains("active")) {
+				subMenu.classList.remove("active");
+				subBtn.setAttribute("aria-expanded", "false");
+				return;
 			}
+		}
 
-			// close the menu or search drawers last
-			if (body.classList.contains("menu_active")) {
-				body.classList.remove("menu_active");
-				menuOpen.setAttribute("aria-expanded", "false");
-			} else if (body.classList.contains("search_active")) {
-				body.classList.remove("search_active");
-				searchOpen.setAttribute("aria-expanded", "false");
-			}
-		});
-	}
-	escapeToggle();
+		// close the menu or search drawers last
+		if (body.classList.contains("menu_active")) {
+			body.classList.remove("menu_active");
+			menuOpen.setAttribute("aria-expanded", "false");
+		} else if (body.classList.contains("search_active")) {
+			body.classList.remove("search_active");
+			searchOpen.setAttribute("aria-expanded", "false");
+		}
+	});
 }

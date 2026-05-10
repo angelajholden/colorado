@@ -130,7 +130,6 @@ time {
 }
 
 button {
-	display: block;
 	padding: 0;
 	border: none;
 	background-color: transparent;
@@ -841,6 +840,14 @@ fieldset {
 	align-items: center;
 }
 
+.main_nav li {
+	border-right: 1px solid var(--gray);
+}
+
+.main_nav li:first-of-type {
+	border-left: 1px solid var(--gray);
+}
+
 .main_nav a {
 	display: block;
 	line-height: 1;
@@ -852,7 +859,6 @@ fieldset {
 	font-size: 1rem;
 	color: var(--accent);
 	background-color: var(--white);
-	border-right: 1px solid var(--gray);
 	transition:
 		border-right 300ms ease-in-out,
 		background-color 300ms ease-in-out,
@@ -860,9 +866,7 @@ fieldset {
 }
 
 .main_nav li:first-of-type a {
-	border-left: 1px solid var(--gray);
 	transition:
-		border-left 300ms ease-in-out,
 		background-color 300ms ease-in-out,
 		color 300ms ease-in-out;
 }
@@ -875,20 +879,6 @@ fieldset {
 	background-color: var(--accent);
 }
 
-.main_nav li:first-of-type a.active,
-.main_nav li:first-of-type a:focus,
-.main_nav li:first-of-type a:hover,
-.main_nav li:first-of-type a:active {
-	border-left: 1px solid var(--accent);
-}
-
-.main_nav li:last-of-type a.active,
-.main_nav li:last-of-type a:focus,
-.main_nav li:last-of-type a:hover,
-.main_nav li:last-of-type a:active {
-	border-right: 1px solid var(--accent);
-}
-
 .main_nav a:has(+ button) {
 	width: calc(100% - 48px);
 }
@@ -896,7 +886,6 @@ fieldset {
 .main_nav button {
 	padding: 1rem;
 	background-color: transparent;
-	border-right: 1px solid var(--gray);
 	transition: background-color 300ms ease-in-out;
 }
 
@@ -947,25 +936,20 @@ fieldset {
 }
 
 .sub_menu li {
-	border: none;
+	border-right: none;
 	border-bottom: 1px solid var(--alt-green);
+}
+
+.sub_menu li:first-of-type {
+	border-left: none;
 }
 
 .sub_menu a {
 	color: var(--white);
 	background-color: var(--accent);
-	border: none;
 	transition:
 		background-color 300ms ease-in-out,
 		color 300ms ease-in-out;
-}
-
-.sub_menu li:first-of-type a {
-	border-left: none;
-}
-
-.sub_menu li:last-of-type a {
-	border-right: none;
 }
 
 .sub_menu a.active,
@@ -974,13 +958,6 @@ fieldset {
 .sub_menu a:active {
 	color: var(--accent);
 	background-color: var(--white);
-}
-
-.sub_menu li:first-of-type a.active,
-.sub_menu li:first-of-type a:focus,
-.sub_menu li:first-of-type a:hover,
-.sub_menu li:first-of-type a:active {
-	border-left: none;
 }
 
 .sub_menu li:last-of-type a.active,
@@ -1029,6 +1006,10 @@ fieldset {
 		border-bottom: 1px solid var(--gray);
 	}
 
+	.main_nav li:first-of-type {
+		border-left: none;
+	}
+
 	.main_nav li:hover svg {
 		transform: rotate(0);
 	}
@@ -1050,7 +1031,6 @@ fieldset {
 	}
 
 	.sub_menu li {
-		border: none;
 		border-bottom: 1px solid var(--alt-green);
 	}
 }
