@@ -426,6 +426,13 @@ fieldset {
 	margin-bottom: 1rem;
 }
 
+.form_buttons {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
 .button {
 	display: inline-block;
 	padding: clamp(0.333rem, 1vw, 0.75rem) 1rem;
@@ -457,6 +464,25 @@ fieldset {
 .button.solid:hover,
 .button.solid:active {
 	color: var(--accent);
+}
+
+.reset_button {
+	color: var(--accent);
+	text-decoration: underline;
+	text-decoration-color: var(--accent);
+	text-decoration-thickness: 2px;
+	text-underline-offset: 3px;
+	transition: text-decoration-color 300ms ease-in-out;
+}
+
+.reset_button:focus,
+.reset_button:hover,
+.reset_button:active {
+	text-decoration-color: transparent;
+}
+
+.error_message {
+	color: red;
 }
 
 .sr-only {
