@@ -19,6 +19,14 @@ export default function initBlogContent() {
 		const root = document.querySelector(".blog_section");
 		if (!root) return;
 
+		const origin = window.location.origin;
+		let url;
+		if (origin === "https://angelajholden.github.io/") {
+			url = "https://angelajholden.github.io/colorado/";
+		} else {
+			url = origin;
+		}
+
 		/**
 		 * <article class="article">
 			<div class="content_wrap">
@@ -74,7 +82,7 @@ export default function initBlogContent() {
 			const figure = document.createElement("figure");
 			figure.classList.add("figure");
 			const image = document.createElement("img");
-			image.src = `${window.location.origin}/${item.featured_image}`;
+			image.src = `${url}/${item.featured_image}`;
 			image.alt = item.image_alt;
 			figure.append(image);
 

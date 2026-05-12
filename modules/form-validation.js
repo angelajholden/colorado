@@ -5,8 +5,10 @@ export default function initFormValidation() {
 	const origin = root.querySelector('input[name="origin"]');
 	const path = root.querySelector('input[name="pathname"]');
 
-	origin.value = window.location.origin;
-	path.value = window.location.pathname;
+	if (origin && path) {
+		origin.value = window.location.origin;
+		path.value = window.location.pathname;
+	}
 
 	const name = root.querySelector('input[name="name"]');
 	const email = root.querySelector("input[name=email]");
