@@ -1,12 +1,102 @@
 [
 	{
-		"title": "",
-		"author": "",
+		"title": "Designing a Calm Workspace for Deep Focus",
+		"author": "Maya Chen",
 		"published": "2026-05-08T19:37:00Z",
-		"category": "",
-		"comment_count": 0,
-		"slug": "",
-		"featured_image": "",
-		"image_alt": ""
+		"category": "Design",
+		"comment_count": 12,
+		"slug": "designing-a-calm-workspace-for-deep-focus",
+		"featured_image": "images/optimized/boys-in-bristol-photography-uOeXhx5JV04-unsplash.jpg",
+		"image_alt": "Minimal workspace with desk lamp and notebook"
+	},
+	{
+		"title": "5 Small CSS Tricks That Improve Readability",
+		"author": "Ethan Walker",
+		"published": "2026-05-05T14:12:00Z",
+		"category": "CSS",
+		"comment_count": 8,
+		"slug": "small-css-tricks-improve-readability",
+		"featured_image": "images/optimized/scott-eckersley-n_q3Dyzv9jQ-unsplash.jpg",
+		"image_alt": "Code editor showing styled typography"
+	},
+	{
+		"title": "Why I Still Build Websites Without Frameworks",
+		"author": "Angela Ricci",
+		"published": "2026-05-01T09:45:00Z",
+		"category": "JavaScript",
+		"comment_count": 24,
+		"slug": "why-i-still-build-websites-without-frameworks",
+		"featured_image": "images/optimized/holly-mandarich-4VgatlFyUpQ-unsplash.jpg",
+		"image_alt": "Laptop displaying vanilla JavaScript project"
+	},
+	{
+		"title": "The Art of Writing Cleaner HTML",
+		"author": "Sophia Patel",
+		"published": "2026-04-28T17:20:00Z",
+		"category": "HTML",
+		"comment_count": 5,
+		"slug": "the-art-of-writing-cleaner-html",
+		"featured_image": "images/optimized/floh-keitgen-aFUHu9WNO3Q-unsplash.jpg",
+		"image_alt": "HTML markup displayed in VS Code"
+	},
+	{
+		"title": "Morning Walks, Coffee, and Creative Energy",
+		"author": "Olivia Brooks",
+		"published": "2026-04-24T08:10:00Z",
+		"category": "Lifestyle",
+		"comment_count": 16,
+		"slug": "morning-walks-coffee-and-creative-energy",
+		"featured_image": "images/optimized/clifford-VobvKmG-StA-unsplash 2.jpg",
+		"image_alt": "Coffee mug beside a journal near a window"
+	},
+	{
+		"title": "Building Accessible Navigation Menus",
+		"author": "Noah Bennett",
+		"published": "2026-04-21T13:55:00Z",
+		"category": "Accessibility",
+		"comment_count": 19,
+		"slug": "building-accessible-navigation-menus",
+		"featured_image": "images/optimized/clifford-VobvKmG-StA-unsplash 2.jpg",
+		"image_alt": "Website navigation menu with focus states"
+	},
+	{
+		"title": "A Weekend Reset for Developers",
+		"author": "Emma Rivera",
+		"published": "2026-04-18T11:05:00Z",
+		"category": "Lifestyle",
+		"comment_count": 7,
+		"slug": "weekend-reset-for-developers",
+		"featured_image": "images/optimized/tyler-delgado-A1kXxn2KVCM-unsplash 2.jpg",
+		"image_alt": "Cozy living room with laptop and tea"
+	},
+	{
+		"title": "Organizing JavaScript as Projects Grow",
+		"author": "Angela Ricci",
+		"published": "2026-04-14T15:48:00Z",
+		"category": "JavaScript",
+		"comment_count": 31,
+		"slug": "organizing-javascript-as-projects-grow",
+		"featured_image": "images/optimized/heidi-the-sheltie-looking-out-window.jpg",
+		"image_alt": "JavaScript modules open in code editor"
+	},
+	{
+		"title": "Creating Soft UI Layouts with CSS Grid",
+		"author": "Lucas Kim",
+		"published": "2026-04-11T10:18:00Z",
+		"category": "CSS",
+		"comment_count": 14,
+		"slug": "creating-soft-ui-layouts-with-css-grid",
+		"featured_image": "images/optimized/peter-pryharski-BZ_pzyTd-hE-unsplash.jpg",
+		"image_alt": "Modern card layout built with CSS Grid"
+	},
+	{
+		"title": "How I QA My Own Frontend Projects",
+		"author": "Angela Ricci",
+		"published": "2026-04-08T18:30:00Z",
+		"category": "Workflow",
+		"comment_count": 11,
+		"slug": "how-i-qa-my-own-frontend-projects",
+		"featured_image": "images/optimized/peter-pryharski-BZ_pzyTd-hE-unsplash.jpg",
+		"image_alt": "Checklist beside responsive website preview"
 	}
 ]
