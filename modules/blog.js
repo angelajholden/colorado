@@ -1,7 +1,15 @@
 export default function initBlogContent() {
+	const origin = window.location.origin;
+	let url;
+	if (origin === "https://angelajholden.github.io") {
+		url = "https://angelajholden.github.io/colorado";
+	} else {
+		url = origin;
+	}
+
 	async function fetchData() {
 		try {
-			const response = await fetch("../data/blogs.json");
+			const response = await fetch(`${url}/data/blogs.json`);
 			if (!response.ok) {
 				throw new Error(`HTTP error! status: ${response.status}`);
 			}
@@ -18,30 +26,6 @@ export default function initBlogContent() {
 
 		const root = document.querySelector(".blog_section");
 		if (!root) return;
-
-		const origin = window.location.origin;
-		let url;
-		if (origin === "https://angelajholden.github.io/") {
-			url = "https://angelajholden.github.io/colorado/";
-		} else {
-			url = origin;
-		}
-
-		/**
-		 * <article class="article">
-			<div class="content_wrap">
-				<h2 class="secondary_heading">This is the title</h2>
-				<p class="author">Admin</p>
-				<p class="date"><time datetime="2026-05-12">May 12, 2026</time></p>
-				<p class="categories">Places</p>
-				<p class="comment_count">10 Comments</p>
-				<p class="read_more"><a href="">Read more</a></p>
-			</div>
-			<figure class="figure">
-				<img src="../images/optimized/boys-in-bristol-photography-uOeXhx5JV04-unsplash.jpg" alt="placeholder text">
-			</figure>
-		</article>
-		 */
 
 		data.forEach((item) => {
 			const article = document.createElement("article");

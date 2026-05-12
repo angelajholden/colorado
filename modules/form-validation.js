@@ -1,14 +1,12 @@
 export default function initFormValidation() {
-	const root = document.querySelector(".form");
+	const root = document.querySelector(".contact_form");
 	if (!root) return;
 
 	const origin = root.querySelector('input[name="origin"]');
 	const path = root.querySelector('input[name="pathname"]');
 
-	if (origin && path) {
-		origin.value = window.location.origin;
-		path.value = window.location.pathname;
-	}
+	origin.value = window.location.origin;
+	path.value = window.location.pathname;
 
 	const name = root.querySelector('input[name="name"]');
 	const email = root.querySelector("input[name=email]");
@@ -34,22 +32,16 @@ export default function initFormValidation() {
 		}
 	});
 
-	if (name) {
-		name.addEventListener("input", () => {
-			nameError.hidden = true;
-		});
-	}
+	name.addEventListener("input", () => {
+		nameError.hidden = true;
+	});
 
-	if (email) {
-		email.addEventListener("input", () => {
-			emailError.hidden = true;
-		});
-	}
+	email.addEventListener("input", () => {
+		emailError.hidden = true;
+	});
 
-	if (reset) {
-		reset.addEventListener("click", () => {
-			nameError.hidden = true;
-			emailError.hidden = true;
-		});
-	}
+	reset.addEventListener("click", () => {
+		nameError.hidden = true;
+		emailError.hidden = true;
+	});
 }
