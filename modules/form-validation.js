@@ -12,9 +12,9 @@ export default function initFormValidation() {
 
 	const name = root.querySelector('input[name="name"]');
 	const email = root.querySelector("input[name=email]");
-
 	const nameError = root.querySelector("#name-required");
 	const emailError = root.querySelector("#email-required");
+	const reset = root.querySelector(".reset_button");
 
 	root.addEventListener("submit", (e) => {
 		if (name.value === null || name.value === "") {
@@ -34,17 +34,22 @@ export default function initFormValidation() {
 		}
 	});
 
-	name.addEventListener("input", () => {
-		nameError.hidden = true;
-	});
+	if (name) {
+		name.addEventListener("input", () => {
+			nameError.hidden = true;
+		});
+	}
 
-	email.addEventListener("input", () => {
-		emailError.hidden = true;
-	});
+	if (email) {
+		email.addEventListener("input", () => {
+			emailError.hidden = true;
+		});
+	}
 
-	const reset = root.querySelector(".reset_button");
-	reset.addEventListener("click", () => {
-		nameError.hidden = true;
-		emailError.hidden = true;
-	});
+	if (reset) {
+		reset.addEventListener("click", () => {
+			nameError.hidden = true;
+			emailError.hidden = true;
+		});
+	}
 }
