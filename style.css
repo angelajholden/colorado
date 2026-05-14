@@ -223,6 +223,25 @@ dl dd {
 	background-color: var(--lt-gray);
 }
 
+.list_nav ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+.list_nav li {
+	margin: 0.5rem 0;
+}
+
+.list_nav a {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.list_nav span {
+	color: var(--med-gray);
+}
+
 /* Table */
 table {
 	width: 100%;
@@ -468,6 +487,10 @@ fieldset {
 .button.solid:hover,
 .button.solid:active {
 	color: var(--accent);
+}
+
+.button[hidden] {
+	display: none;
 }
 
 .reset_button {
@@ -1512,7 +1535,7 @@ fieldset {
 .blog_layout {
 	display: grid;
 	grid-template-columns: 4fr 1fr;
-	gap: 4rem;
+	gap: 3rem;
 }
 
 .blog_layout .blog_section {
@@ -1576,6 +1599,8 @@ fieldset {
 	height: 100%;
 	object-fit: cover;
 }
+
+/* Sidebar */
 
 /* Footer */
 .footer .section {

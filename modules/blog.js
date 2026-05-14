@@ -20,14 +20,70 @@ export default function initBlogContent() {
 		}
 	}
 
-	async function initBlogRender() {
-		const data = await fetchData();
-		if (!data) return;
+	function initSidebar(data) {
+		const categories = data.reduce((acc, item) => {
+			if (!acc[item.category]) {
+				acc[item.category] = 0;
+			}
+			acc[item.category]++;
+			return acc;
+		}, {});
+		return categories;
+	}
 
+	function initArchive(data) {
+		const archive = data.reduce((acc, item) => {
+			const date = new Date(item.published);
+			const month = date.toLocaleString("en-US", {
+				month: "long",
+			});
+			if (!acc[month]) {
+				acc[month] = 0;
+			}
+			acc[month]++;
+			return acc;
+		}, {});
+		return archive;
+	}
+
+	function initRenderList(data, listType) {
+		const root = document.querySelector(listType);
+		if (!root) return;
+
+		const ul = document.createElement("ul");
+		Object.entries(data).forEach((item) => {
+			const li = document.createElement("li");
+			const link = document.createElement("a");
+			const span = document.createElement("span");
+
+			link.href = item[0].toLowerCase().replaceAll(" ", "-");
+			link.textContent = item[0];
+			span.textContent = ` (${item[1]})`;
+
+			link.append(span);
+			li.append(link);
+			ul.append(li);
+		});
+		root.append(ul);
+	}
+
+	let page = 0;
+	const itemsPerPage = 3;
+
+	function initCountAndSlice(data, page) {
+		let start = page * itemsPerPage;
+		let end = start + itemsPerPage;
+
+		let visible = data.slice(start, end);
+		return visible;
+	}
+
+	function initBlogRender(data) {
 		const root = document.querySelector(".blog_section");
 		if (!root) return;
 
-		data.forEach((item) => {
+		const visible = initCountAndSlice(data, page);
+		visible.forEach((item) => {
 			const article = document.createElement("article");
 			article.classList.add("article");
 
@@ -43,9 +99,17 @@ export default function initBlogContent() {
 
 			const date = document.createElement("p");
 			date.classList.add("date");
-			date.textContent = item.published;
 			const time = document.createElement("time");
-			time.dateTime = item.published;
+
+			let dateStyle;
+			dateStyle = new Date(item.published);
+			const dateStyleFormat = dateStyle.toLocaleString("en-US", {
+				dateStyle: "long",
+			});
+			date.textContent = dateStyleFormat;
+
+			const dateTimeFormat = item.published.slice(0, 10);
+			time.dateTime = dateTimeFormat;
 			date.append(time);
 
 			const category = document.createElement("p");
@@ -74,5 +138,33 @@ export default function initBlogContent() {
 			root.append(article);
 		});
 	}
-	initBlogRender();
+
+	async function init() {
+		const data = await fetchData();
+		if (!data) return;
+
+		const categories = initSidebar(data);
+		initRenderList(categories, ".list_nav.categories");
+
+		const archive = initArchive(data);
+		initRenderList(archive, ".list_nav.archive");
+
+		const loadMore = document.querySelector(".load_more-button");
+		const totalPages = Math.ceil(data.length / itemsPerPage);
+
+		if (loadMore) {
+			loadMore.hidden = false;
+			loadMore.addEventListener("click", () => {
+				if (page < totalPages - 1) {
+					page++;
+					initBlogRender(data);
+				}
+				if (page === totalPages - 1) {
+					loadMore.hidden = true;
+				}
+			});
+		}
+		initBlogRender(data);
+	}
+	init();
 }
