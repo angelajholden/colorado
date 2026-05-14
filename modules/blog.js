@@ -22,9 +22,7 @@ export default function initBlogContent() {
 
 	function initSidebar(data) {
 		const categories = data.reduce((acc, item) => {
-			if (!acc[item.category]) {
-				acc[item.category] = 0;
-			}
+			if (!acc[item.category]) acc[item.category] = 0;
 			acc[item.category]++;
 			return acc;
 		}, {});
@@ -34,12 +32,8 @@ export default function initBlogContent() {
 	function initArchive(data) {
 		const archive = data.reduce((acc, item) => {
 			const date = new Date(item.published);
-			const month = date.toLocaleString("en-US", {
-				month: "long",
-			});
-			if (!acc[month]) {
-				acc[month] = 0;
-			}
+			const month = date.toLocaleString("en-US", { month: "long" });
+			if (!acc[month]) acc[month] = 0;
 			acc[month]++;
 			return acc;
 		}, {});
@@ -56,7 +50,7 @@ export default function initBlogContent() {
 			const link = document.createElement("a");
 			const span = document.createElement("span");
 
-			link.href = item[0].toLowerCase().replaceAll(" ", "-");
+			link.href = `${url}/${item[0].toLowerCase().replaceAll(" ", "-")}`;
 			link.textContent = item[0];
 			span.textContent = ` (${item[1]})`;
 
@@ -73,7 +67,6 @@ export default function initBlogContent() {
 	function initCountAndSlice(data, page) {
 		let start = page * itemsPerPage;
 		let end = start + itemsPerPage;
-
 		let visible = data.slice(start, end);
 		return visible;
 	}
@@ -99,15 +92,12 @@ export default function initBlogContent() {
 
 			const date = document.createElement("p");
 			date.classList.add("date");
+
+			let dateStyle = new Date(item.published);
+			dateStyle = dateStyle.toLocaleString("en-US", { dateStyle: "long" });
+			date.textContent = dateStyle;
+
 			const time = document.createElement("time");
-
-			let dateStyle;
-			dateStyle = new Date(item.published);
-			const dateStyleFormat = dateStyle.toLocaleString("en-US", {
-				dateStyle: "long",
-			});
-			date.textContent = dateStyleFormat;
-
 			const dateTimeFormat = item.published.slice(0, 10);
 			time.dateTime = dateTimeFormat;
 			date.append(time);
