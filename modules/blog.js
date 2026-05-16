@@ -62,7 +62,7 @@ export default function initBlogContent() {
 	}
 
 	let page = 0;
-	const itemsPerPage = 3;
+	const itemsPerPage = 4;
 
 	function initCountAndSlice(data, page) {
 		let start = page * itemsPerPage;
@@ -100,7 +100,6 @@ export default function initBlogContent() {
 			const time = document.createElement("time");
 			const dateTimeFormat = item.published.slice(0, 10);
 			time.dateTime = dateTimeFormat;
-			date.append(time);
 
 			const category = document.createElement("p");
 			category.textContent = `Category: ${item.category}`;
@@ -110,21 +109,54 @@ export default function initBlogContent() {
 
 			const readMore = document.createElement("p");
 			readMore.classList.add("read_more");
+
 			const link = document.createElement("a");
 			link.href = item.slug;
 			link.textContent = "Read More →";
-			readMore.append(link);
 
+			date.append(time);
+			readMore.append(link);
 			wrap.append(h2, author, date, category, comments, readMore);
 
 			const figure = document.createElement("figure");
 			figure.classList.add("figure");
+
 			const image = document.createElement("img");
 			image.src = `${url}/${item.featured_image}`;
 			image.alt = item.image_alt;
-			figure.append(image);
 
+			figure.append(image);
 			article.append(wrap, figure);
+			root.append(article);
+		});
+	}
+
+	function initLatestPosts(data) {
+		const root = document.querySelector(".latest_posts-container");
+		if (!root) return;
+
+		const items = data.slice(3, 6);
+
+		items.forEach((item) => {
+			const article = document.createElement("article");
+			article.classList.add("latest_post");
+
+			const h4 = document.createElement("h4");
+
+			const link = document.createElement("a");
+			link.href = item.slug;
+			link.textContent = item.title;
+
+			const figure = document.createElement("figure");
+			figure.classList.add("figure");
+
+			const img = document.createElement("img");
+			img.src = `${url}/${item.featured_image}`;
+			img.alt = item.image_alt;
+
+			figure.append(img);
+			h4.append(link);
+			article.append(figure, h4);
 			root.append(article);
 		});
 	}
@@ -132,6 +164,8 @@ export default function initBlogContent() {
 	async function init() {
 		const data = await fetchData();
 		if (!data) return;
+
+		initLatestPosts(data);
 
 		const categories = initSidebar(data);
 		initRenderList(categories, ".list_nav.categories");
