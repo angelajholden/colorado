@@ -3,8 +3,6 @@ export default function initAccordion() {
 	if (!root) return;
 
 	const items = root.querySelectorAll(".accordion_item");
-	const triggers = root.querySelectorAll(".accordion_trigger");
-
 	items.forEach((item) => {
 		const trigger = item.querySelector(".accordion_trigger");
 		trigger.addEventListener("click", () => {

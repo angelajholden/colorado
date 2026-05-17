@@ -246,17 +246,17 @@
 			<div class="wrap">
 				<h2 class="center">Form Elements</h2>
 				<form class="form" action="#" method="post">
-					<label class="sr-only" for="name">Name</label>
-					<input type="text" id="name" name="name" placeholder="Enter your name">
+					<label for="name">Name <span>*</span></label>
+					<input type="text" id="name" name="name">
 
-					<label class="sr-only" for="email">Email</label>
-					<input type="email" id="email" name="email" placeholder="Enter your email">
+					<label for="email">Email <span>*</span></label>
+					<input type="email" id="email" name="email">
 
-					<label class="sr-only" for="password">Password</label>
-					<input type="password" id="password" name="password" placeholder="Password">
+					<label for="password">Password <span>*</span></label>
+					<input type="password" id="password" name="password">
 
 					<label for="topic">
-						<div>Topic</div>
+						<div>Topic <span>*</span></div>
 						<select id="topic" name="topic">
 							<option value="">Please choose</option>
 							<option value="html">HTML</option>
@@ -280,7 +280,7 @@
 					</fieldset>
 
 					<label for="message">Message</label>
-					<textarea id="message" name="message" rows="5" cols="40" placeholder="Write your message"></textarea>
+					<textarea id="message" name="message" rows="5" cols="40"></textarea>
 
 					<label for="file">Upload a file</label>
 					<input type="file" id="file" name="file">
@@ -297,12 +297,7 @@
 				</form>
 			</div>
 		</section>
-		<aside>
-			<div class="wrap">
-				<h2>Aside</h2>
-				<p>This is an aside for secondary content.</p>
-			</div>
-		</aside>
+
 	</main>
 	<footer class="footer">
 		<div class="section">
@@ -351,16 +346,7 @@
 				</aside>
 				<aside class="aside">
 					<h3 class="tertiary_heading">Page Links</h3>
-					<nav class="list_nav">
-						<ul>
-							<li><a href="#">April 2025 <span class="count">(20)</span></a></li>
-							<li><a href="#">March 2025 <span class="count">(25)</span></a></li>
-							<li><a href="#">February 2025 <span class="count">(18)</span></a></li>
-							<li><a href="#">January 2025 <span class="count">(38)</span></a></li>
-							<li><a href="#">December 2024 <span class="count">(15)</span></a></li>
-							<li><a href="#">November 2024 <span class="count">(12)</span></a></li>
-						</ul>
-					</nav>
+					<nav class="list_nav archive"></nav>
 				</aside>
 				<aside class="aside">
 					<h3 class="tertiary_heading">Instagram Feed</h3>

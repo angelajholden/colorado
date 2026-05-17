@@ -32,7 +32,7 @@ export default function initBlogContent() {
 	function initArchive(data) {
 		const archive = data.reduce((acc, item) => {
 			const date = new Date(item.published);
-			const month = date.toLocaleString("en-US", { month: "long" });
+			const month = date.toLocaleString("en-US", { month: "long", year: "numeric" });
 			if (!acc[month]) acc[month] = 0;
 			acc[month]++;
 			return acc;
@@ -62,7 +62,7 @@ export default function initBlogContent() {
 	}
 
 	let page = 0;
-	const itemsPerPage = 4;
+	const itemsPerPage = 3;
 
 	function initCountAndSlice(data, page) {
 		let start = page * itemsPerPage;
